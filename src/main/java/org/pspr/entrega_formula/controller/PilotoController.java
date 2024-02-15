@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.Random;
 
 @Controller
-@RequestMapping("/piloto")
+@RequestMapping("/pilotos")
 public class PilotoController {
 
 

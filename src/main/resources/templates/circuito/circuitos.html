@@ -20,18 +20,19 @@
 <!-- Page Content-->
 <div class="container px-4 px-lg-5">
     <!-- Content Row-->
-    <div class="row gx-4 gx-lg-5">
-        <div  class="col-md-3 mb-5">
+    <div class="row gx-4 gx-lg-5" >
+        <div  class="col-md-3 mb-5" th:each="circuito:${circuitos}">
             <div class="card h-100">
                 <div class="card-body">
-                    <h2 class="card-title" >
+                    <h2 class="card-title" th:text="${circuito.nombre}">
                     </h2>
-                    <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+                    <h6 class="card-subtitle mb-2 text-body-secondary" th:text="${circuito.pais}"></h6>
                     <div class="text-center">
-                        <img th:class="piloto-portada" class="rounded">
+                        <img th:class="piloto-portada" class="rounded" th:src="${circuito.foto}">
                     </div>
                 </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" >Más info</a></div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm"
+                                            th:href="@{/circuitos/circuito/{id} (id=${circuito.circuitoId}) }">Más info</a></div>
             </div>
         </div>
     </div>

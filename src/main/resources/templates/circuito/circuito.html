@@ -19,20 +19,20 @@
 </nav>
 <!-- Page Content-->
 <section class="py-5">
-    <div class="container px-4 px-lg-5 my-5">
-        <div class="row gx-4 gx-lg-5">
+    <div class="container px-4 px-lg-5 my-5" th:if="${circuitoADetallar}!=null">
+        <div class="row gx-4 gx-lg-5" >
             <div class="col-md-6">
-                <img class="card-img-top mb-5 mb-md-0" /></div>
+                <img class="card-img-top mb-5 mb-md-0" th:src="${circuitoADetallar.foto}" /></div>
             <div class="col-md-6">
                 <div class="mb-1"><span ></span></div>
                 <h1 class="display-5 fw-bolder" ></h1>
                 <div class="fs-5 mb-5">
                     <ul>
-                        <li><span class="text-black"> </span>
+                        <li><span class="text-black">Id:</span>
                             <span class="text-black-50" ></span>
                         </li>
                         <li>
-                            <span class="text-black"> </span>
+                            <span class="text-black">Longitud:</span>
                             <span class="text-black-50" ></span><span class="text-black-50">&nbsp;</span>
                         </li>
                         <li>
@@ -55,6 +55,9 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div th:unless="${circuitoADetallar}!=null">
+        <h2 th:text="${msg}"></h2>
     </div>
 </section>
 
