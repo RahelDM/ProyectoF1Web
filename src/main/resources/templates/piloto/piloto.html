@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content="Aplicación web de Fórmula 1"/>
+    <meta name="author" content="PSPR - IES Monte Naranco"/>
+    <title>Formula Naranco :: Piloto</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+
+</head>
+<body>
+<!-- Responsive navbar-->
+<nav th:replace="~{index :: menu}">
+</nav>
+<!-- Page Content-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5" th:if="${piloto}!=null">
+        <div class="row gx-4 gx-lg-5">
+            <div class="col-md-6">
+                <img class="card-img-top mb-5 mb-md-0" th:src="${piloto.foto}"/></div>
+            <div class="col-md-6">
+                <div class="mb-1"><span th:text="${piloto.equipo}"></span></div>
+                <h1 class="display-5 fw-bolder" th:text="${piloto.nombre}"></h1>
+                <div class="fs-5 mb-5">
+                    <ul>
+                        <li>
+                            <span class="text-black">Id:</span>
+                            <span class="text-black-50" th:text="${piloto.pilotoId}"></span>
+                        </li>
+                        <li>
+                            <span class="text-black">Dorsal:</span>
+                            <span class="text-black-50" th:text="${piloto.numero}"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="fs-5 mb-5">
+                </div>
+                <div class="d-flex">
+                    <a class="btn btn-outline-dark flex-shrink-0" type="button">
+                        Editar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:unless="${piloto}!=null">
+        <h2 th:text="${msg}"></h2>
+    </div>
+</section>
+
+<!-- Footer-->
+<footer th:replace="~{index :: footer}">
+</footer>
+<div th:replace="~{index :: librerias-js}"></div>
+
+</body>
+</html>

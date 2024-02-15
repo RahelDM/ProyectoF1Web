@@ -1,0 +1,27 @@
+.piloto-portada {
+    max-height: 17em;
+    max-width: 100%;
+}
+
+.my-5 {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+}
+
+nav {
+    margin-bottom: 1em;
+}
+
+#listado-pilotos h2.card-title {
+    line-height: 1.5em;
+    height: 3em;
+    overflow: hidden;
+}
+
+.logo-f1{
+    max-width: 50px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content="Aplicación web de Fórmula 1"/>
+    <meta name="author" content="PSPR - IES Monte Naranco"/>
+    <title>Formula Naranco</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+
+</head>
+<body>
+<!-- Responsive navbar-->
+<nav th:fragment="menu" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container px-5">
+        <img class="logo-f1" th:src="@{/img/logo-small.png}"/>&nbsp;
+        <a class="navbar-brand" href="/">Formula Naranco</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" aria-current="page" th:href="@{/}">Inicio</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                       aria-haspopup="true" aria-expanded="false">Pilotos</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" th:href="@{/piloto}">Ver listado</a>
+                        <a class="dropdown-item" >Nuevo piloto</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/circuito}">Circuitos</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/resultado}">Resultados</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Page Content-->
+<div class="container px-4 px-lg-5">
+    <!-- Heading Row-->
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0"
+                                   th:src="@{/img/logo.png}" alt="..."/></div>
+        <div class="col-lg-5">
+            <h1 class="font-weight-light">Formula Naranco</h1>
+            <p>Web para los amantes de la Fórmula 1. Utiliza los datos de la temporada 2013, última de Fernando Alonso
+                como piloto de Ferrari.</p>
+            <a class="btn btn-primary" href="#!">Ver resultados</a>
+        </div>
+    </div>
+    <!-- Content Row-->
+    <div class="row gx-4 gx-lg-5">
+        <div class="col-md-4 mb-5" th:each="piloto:${pilotosAzar}">
+            <div th:fragment="tarjeta-piloto" class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title"  th:text="${piloto.nombre}" >
+                    </h2>
+                    <h6 class="card-subtitle mb-2 text-body-secondary"
+                        th:text="${piloto.equipo}">
+                    </h6>
+                    <div class="text-center">
+                        <img th:class="piloto-portada" th:src="${piloto.foto}" th:alt="${piloto.nombre}" class="rounded">
+                    </div>
+                </div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm" th:href="@{/piloto/{id} (id=${piloto.pilotoId}) }">Más info</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer-->
+<footer th:fragment="footer" class="py-5 bg-dark">
+    <div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">Copyright &copy; Formula Naranco 2024</p>
+    </div>
+</footer>
+
+<!-- Core theme JS-->
+<div th:fragment="librerias-js">
+    <script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <script th:src="@{/js/scripts.js}"></script>
+</div>
+</body>
+</html>
