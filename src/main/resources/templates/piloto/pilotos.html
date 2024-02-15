@@ -21,7 +21,10 @@
 <div class="container px-4 px-lg-5">
     <!-- Content Row-->
     <div id="listado-pilotos" class="row gx-4 gx-lg-5">
-        <div  class="col-md-3 mb-5">
+        <!-- Iteramos sobre la lista de TODOS los pilotos  -->
+        <div  class="col-md-3 mb-5" th:each="piloto:${pilotos}">
+            <!-- Después, empleando el with, le pasamos a la tarjeta del index el piloto de la lista a iterar -->
+           <div th:replace="~{index :: tarjeta-piloto}" th:with="piloto=${piloto}"></div>
         </div>
     </div>
 </div>
