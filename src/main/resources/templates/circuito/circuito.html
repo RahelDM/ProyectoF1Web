@@ -24,24 +24,24 @@
             <div class="col-md-6">
                 <img class="card-img-top mb-5 mb-md-0" th:src="${circuitoADetallar.foto}" /></div>
             <div class="col-md-6">
-                <div class="mb-1"><span ></span></div>
-                <h1 class="display-5 fw-bolder" ></h1>
+                <div class="mb-1"><span th:text="${circuitoADetallar.pais}"></span></div>
+                <h1 class="display-5 fw-bolder" th:text="${circuitoADetallar.nombre}"></h1>
                 <div class="fs-5 mb-5">
                     <ul>
                         <li><span class="text-black">Id:</span>
-                            <span class="text-black-50" ></span>
+                            <span class="text-black-50" th:text="${circuitoADetallar.circuitoId}"></span>
                         </li>
                         <li>
                             <span class="text-black">Longitud:</span>
-                            <span class="text-black-50" ></span><span class="text-black-50">&nbsp;</span>
+                            <span class="text-black-50" th:text="${circuitoADetallar.longitud}"></span><span class="text-black-50">&nbsp;metros</span>
                         </li>
                         <li>
-                            <span class="text-black"> </span>
-                            <span class="text-black-50" ></span>
+                            <span class="text-black">Vueltas:</span>
+                            <span class="text-black-50" th:text="${circuitoADetallar.numeroVueltas}"></span>
                         </li>
                         <li>
-                            <span class="text-black"> </span>
-                            <span class="text-black-50" ></span>
+                            <span class="text-black">Curvas:</span>
+                            <span class="text-black-50" th:text="${circuitoADetallar.numeroCurvas}"></span>
                         </li>
                     </ul>
                 </div>
