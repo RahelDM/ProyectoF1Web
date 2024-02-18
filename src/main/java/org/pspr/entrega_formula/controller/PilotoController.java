@@ -37,4 +37,31 @@ public class PilotoController {
         return "piloto/piloto";
     }
 
+
+    @GetMapping("/pilotoForm/{id}")
+    public String updatePiloto(Model model, @PathVariable Long id){
+        Optional<Piloto> pilotoOptional = pilotoService.findPilotoById(id);
+        if(pilotoOptional.isPresent()){ //el piloto a actualizar existe
+            model.addAttribute("pilotoParaActualizar",pilotoOptional.get()); //mandamos el piloto para actualizar
+            model.addAttribute("nuevo", false);
+            return "piloto/pilotoForm";
+        }else {
+            model.addAttribute("msg","No hay un piloto con id: " + id);
+        }
+        return "redirect:/pilotos"; //si se produce algún error y no se accede al formulario...
+    }
+
+    @PostMapping("/piloto/save")
+    public String savePiloto(@ModelAttribute(value="pilotoFormulario") Piloto pilotoFormulario){
+        pilotoService.save(pilotoFormulario);
+        return "redirect:/pilotos/"+pilotoFormulario.getPilotoId(); //si se produce algún error y no se accede al formulario...
+    }
+
+    @PutMapping("/piloto/save")
+    public String updatePiloto(@ModelAttribute(value="pilotoFormulario") Piloto pilotoFormulario){
+        pilotoService.save(pilotoFormulario);
+        return "redirect:/pilotos/"+pilotoFormulario.getPilotoId(); //si se produce algún error y no se accede al formulario...
+    }
+
+
 }

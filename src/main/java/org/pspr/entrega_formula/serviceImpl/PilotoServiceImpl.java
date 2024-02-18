@@ -29,4 +29,14 @@ public class PilotoServiceImpl implements PilotoService {
     public Optional<Piloto> findPilotoById(Long id) {
         return pilotoRepository.findById(id);
     }
+
+    @Override
+    public Piloto save(Piloto piloto) {
+        if(piloto!=null){
+            return pilotoRepository.save(piloto);
+        }
+        return null;
+    }
+
+
 }

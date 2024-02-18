@@ -12,4 +12,6 @@ public interface PilotoService  {
 
     Optional<Piloto> findPilotoById(Long id);
 
+    Piloto save(Piloto piloto);
+
 }
