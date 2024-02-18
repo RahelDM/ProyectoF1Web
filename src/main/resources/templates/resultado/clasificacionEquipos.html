@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Formula Naranco :: Clasificación equipos</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+
+</head>
+<body>
+<!-- Responsive navbar-->
+<nav th:replace="~{index :: menu}">
+</nav>
+<!-- Page Content-->
+<div class="container px-4 px-lg-5">
+    <!-- Content Row-->
+    <div class="row gx-4 gx-lg-5">
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Posición</th>
+                <th scope="col">Equipo</th>
+                <th scope="col">Puntos</th>
+            </tr>
+            </thead>
+            <tbody >
+            <tr>
+                <td th:text="${equipoStat.count}"></td>
+                <td ></td>
+                <td ></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Footer-->
+<footer th:replace="~{index :: footer}">
+</footer>
+<div th:replace="~{index :: librerias-js}"></div>
+
+</body>
+</html>

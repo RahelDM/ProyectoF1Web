@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Formula Naranco :: Resultados</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+
+</head>
+<body>
+<!-- Responsive navbar-->
+<nav th:replace="~{index :: menu}">
+</nav>
+<!-- Page Content-->
+<div class="container px-4 px-lg-5">
+    <!-- Content Row-->
+    <div class="row gx-4 gx-lg-5">
+        <!-- Formularo de búsqueda -->
+        <form  method="GET">
+            <div class="form-row">
+                <div class="form-group col-md-10">
+                    <input type="text" class="form-control" name="cadena" >
+                </div>
+                <div id="search-button" class="form-group col-md-2">
+                    <input class="btn btn-success" type="submit" value="Buscar"/>
+                </div>
+            </div>
+        </form>
+
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Piloto</th>
+                <th scope="col">Equipo</th>
+                <th scope="col">Circuito</th>
+                <th scope="col">Posición salida</th>
+                <th scope="col">Posición llegada</th>
+                <th scope="col">Posiciones ganadas</th>
+            </tr>
+            </thead>
+            <tbody >
+            <tr>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td ></td>
+                <td  class="red">Descalificado</td>
+                <!-- Modifica el th:class del td a green o red en función de las posiciones ganadas -->
+                <td >
+                    <span ></span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Footer-->
+<footer th:replace="~{index :: footer}">
+</footer>
+<div th:replace="~{index :: librerias-js}"></div>
+
+</body>
+</html>
