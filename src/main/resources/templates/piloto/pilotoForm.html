@@ -21,26 +21,26 @@
 <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
         <div class="row gx-4 gx-lg-5">
-            <form th:action="@{/pilotos/piloto/save}" th:method="${nuevo}?'POST':'PUT'" th:object="${pilotoFormulario}">
-                <div class="form-group" >
+            <form th:action="@{/pilotos/piloto/save}" th:method="${nuevo}?'POST':'PUT'" th:object="${piloto}">
+                <div class="form-group" th:if="${nuevo==false}" >
                     <label>Id</label>
-                    <input type="text" th:field="${pilotoParaActualizar.pilotoId}" readonly class="form-control" >
+                    <input type="text" th:field="${piloto.pilotoId}" readonly class="form-control" >
                 </div>
                 <div class="form-group">
                     <label>Número</label>
-                    <input type="text" th:field="${pilotoParaActualizar.numero}" class="form-control" >
+                    <input type="text" th:field="${piloto.numero}" class="form-control" >
                 </div>
                 <div class="form-group">
                     <label>Nombre</label>
-                    <input type="text" th:field="${pilotoParaActualizar.nombre}" class="form-control" >
+                    <input type="text" th:field="${piloto.nombre}" class="form-control" >
                 </div>
                 <div class="form-group">
                     <label>Equipo</label>
-                    <input type="text" th:field="${pilotoParaActualizar.equipo}" class="form-control" >
+                    <input type="text" th:field="${piloto.equipo}" class="form-control" >
                 </div>
                 <div class="form-group">
                     <label>Foto</label>
-                    <input type="text" th:field="${pilotoParaActualizar.foto}" class="form-control" >
+                    <input type="text" th:field="${piloto.foto}" class="form-control" >
                 </div>
                 <input class="btn btn-success" type="submit" th:value="${nuevo}?'Guardar':'Modificar'"/>
             </form>
