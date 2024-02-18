@@ -11,4 +11,5 @@ public interface CircuitoService {
 
     Optional<Circuito> findCircuitoById(Long id);
 
+    void save(Circuito circuito);
 }

@@ -24,4 +24,11 @@ public class CircuitoServiceImpl implements CircuitoService {
     public Optional<Circuito> findCircuitoById(Long id) {
         return this.circuitoRepository.findById(id);
     }
+
+    @Override
+    public void save(Circuito circuito) {
+        if(circuito!=null){
+            this.circuitoRepository.save(circuito);
+        }
+    }
 }

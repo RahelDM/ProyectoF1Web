@@ -1,40 +1,65 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta name="description" content="Aplicación web de Fórmula 1"/>
     <meta name="author" content="PSPR - IES Monte Naranco"/>
-    <title ></title>
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <title>Formula Naranco :: Piloto</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <link th:href="@{/css/main.css}" rel="stylesheet">
+
 </head>
-
 <body>
-<div class="container">
-    <h1 ></h1>
+<!-- Responsive navbar-->
+<nav th:replace="~{index :: menu}">
+</nav>
+<!-- Page Content-->
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5">
+            <form th:action="@{/circuitos/circuito/save}" th:method="${nuevo}?'POST':'PUT'" th:object="${circuito}">
+                <div class="form-group" th:if="${nuevo==false}" >
+                    <label>Id</label>
+                    <input type="text" th:field="${circuitoFormulario.circuitoId}" readonly class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" th:field="${circuitoFormulario.nombre}" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label>Pais</label>
+                    <input type="text" th:field="${circuitoFormulario.pais}" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label>Número de curvas</label>
+                    <input type="text" th:field="${circuitoFormulario.numeroCurvas}" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label>Número de vueltas</label>
+                    <input type="text" th:field="${circuitoFormulario.numeroVueltas}" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label>Longitud</label>
+                    <input type="text" th:field="${circuitoFormulario.longitud}" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label>Foto</label>
+                    <input type="text" th:field="${circuitoFormulario.foto}" class="form-control" >
+                </div>
+                <input class="btn btn-success" type="submit" th:value="${nuevo}?'Añadir':'Actualizar'"/>
+            </form>
+        </div>
+    </div>
+</section>
 
-    <form >
-        <table class="table table-striped">
-            <tr >
-                <td> </td>
-                <td><input type="text" ></td>
-            </tr>
+<!-- Footer-->
+<footer th:replace="~{index :: footer}">
+</footer>
+<div th:replace="~{index :: librerias-js}"></div>
 
-            <tr>
-                <td> </td>
-                <td><input type="text" ></td>
-            </tr>
-
-            <tr>
-                <td> </td>
-                <td><input type="text" ></td>
-            </tr>
-
-        </table>
-        <input class="btn btn-primary" type="submit" />
-    </form>
-    <a >Volver a la lista de directores</a>
-</div>
 </body>
-
 </html>

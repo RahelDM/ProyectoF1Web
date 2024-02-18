@@ -33,7 +33,14 @@
                         <a class="dropdown-item" th:href="@{/pilotos/piloto/add}" >Nuevo piloto</a>
                     </div>
                 </li>
-                <li class="nav-item"><a class="nav-link" th:href="@{/circuitos}">Circuitos</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                       aria-haspopup="true" aria-expanded="false">Circuitos</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" th:href="@{/circuitos}">Ver listado</a>
+                        <a class="dropdown-item" th:href="@{/circuitos/circuito/add}" >Nuevo circuito</a>
+                    </div>
+                </li>
                 <li class="nav-item"><a class="nav-link" th:href="@{/resultados}">Resultados</a></li>
             </ul>
         </div>
