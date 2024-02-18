@@ -18,10 +18,43 @@ nav {
     overflow: hidden;
 }
 
-.logo-f1{
+.logo-f1 {
     max-width: 50px;
 }
 
 .form-group {
     margin-bottom: 1rem;
+}
+
+.table .thead-dark th {
+    color: #fff;
+    background-color: #212529;
+    border-color: #32383e;
+}
+
+td.green {
+    background-color: #90EE90FF;
+}
+
+td.red {
+    background-color: #f5c2c7;
+}
+
+.form-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+div#search-button {
+    text-align: right;
+    padding: 0 0 0 1em;
+}
+
+div#search-button > input {
+    width: 100%;
 }

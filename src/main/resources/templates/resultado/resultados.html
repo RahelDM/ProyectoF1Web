@@ -9,9 +9,8 @@
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link th:href="@{/css/styles.css}" rel="stylesheet">
     <link th:href="@{/css/main.css}" rel="stylesheet">
-
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
 </head>
 <body>
 <!-- Responsive navbar-->
@@ -34,7 +33,7 @@
         </form>
 
         <table class="table table-hover table-bordered">
-            <thead class="thead-dark">
+            <thead class="thead-dark" >
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Piloto</th>
@@ -45,19 +44,16 @@
                 <th scope="col">Posiciones ganadas</th>
             </tr>
             </thead>
-            <tbody >
+            <tbody th:each="resultado:${resultados}">
             <tr>
-                <td ></td>
-                <td ></td>
-                <td ></td>
-                <td ></td>
-                <td ></td>
-                <td ></td>
-                <td  class="red">Descalificado</td>
+                <td th:text="${resultado.piloto.numero}"></td>
+                <td  th:text="${resultado.piloto.nombre}"></td>
+                <td  th:text="${resultado.piloto.equipo}"></td>
+                <td  th:text="${resultado.circuito.nombre}"></td>
+                <td  th:text="${resultado.posicionSalida}"></td>
+                <td  th:text="${resultado.posicionLlegada}"></td>
                 <!-- Modifica el th:class del td a green o red en función de las posiciones ganadas -->
-                <td >
-                    <span ></span>
-                </td>
+                <td class="red" th:class="${resultado.posicionSalida - resultado.posicionLlegada < 0} ? 'red' : 'green'" th:text="${resultado.posicionLlegada == 0} ? 'Descalificado' : ${resultado.posicionSalida - resultado.posicionLlegada}"></td>
             </tr>
             </tbody>
         </table>
