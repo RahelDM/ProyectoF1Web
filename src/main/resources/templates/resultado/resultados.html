@@ -9,8 +9,8 @@
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link th:href="@{/css/main.css}" rel="stylesheet">
     <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <link th:href="@{/css/main.css}" rel="stylesheet">
 </head>
 <body>
 <!-- Responsive navbar-->
@@ -21,7 +21,7 @@
     <!-- Content Row-->
     <div class="row gx-4 gx-lg-5">
         <!-- Formularo de búsqueda -->
-        <form  method="GET">
+        <form  method="GET" th:action="@{/resultados/buscar/}">
             <div class="form-row">
                 <div class="form-group col-md-10">
                     <input type="text" class="form-control" name="cadena" >
@@ -53,7 +53,11 @@
                 <td  th:text="${resultado.posicionSalida}"></td>
                 <td  th:text="${resultado.posicionLlegada}"></td>
                 <!-- Modifica el th:class del td a green o red en función de las posiciones ganadas -->
-                <td class="red" th:class="${resultado.posicionSalida - resultado.posicionLlegada < 0} ? 'red' : 'green'" th:text="${resultado.posicionLlegada == 0} ? 'Descalificado' : ${resultado.posicionSalida - resultado.posicionLlegada}"></td>
+                <td th:if="${resultado.posicionLlegada==0}" class="red">Descalificado</td>
+                <td th:unless="${resultado.posicionLlegada==0}"
+                    th:class="${resultado.posicionSalida - resultado.posicionLlegada < 0} ? 'red' : 'green'">
+                    <span th:text="${resultado.posicionSalida - resultado.posicionLlegada}">></span>
+                </td>
             </tr>
             </tbody>
         </table>

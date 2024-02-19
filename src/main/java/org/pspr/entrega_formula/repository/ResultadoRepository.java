@@ -12,4 +12,8 @@ public interface ResultadoRepository  extends JpaRepository<Resultado, Resultado
 
      @Query("FROM Resultado r ORDER BY r.circuito.nombre ASC, r.posicionLlegada ASC")
      List<Resultado> findAllResultadosOrdenados();
+
+     @Query("FROM Resultado r WHERE r.circuito.nombre LIKE %:cadena% OR r.piloto.nombre LIKE %:cadena% OR r.piloto.equipo LIKE %:cadena% ")
+     List<Resultado> findResultadosByWord(String cadena);
+
 }

@@ -17,4 +17,9 @@ public class ResultadoServiceImpl implements ResultadoService {
     public List<Resultado> findAllResultados() {
         return this.resultadoRepository.findAllResultadosOrdenados();
     }
+
+    @Override
+    public List<Resultado> findResultadosByWord(String cadena) {
+       return this.resultadoRepository.findResultadosByWord(cadena);
+    }
 }

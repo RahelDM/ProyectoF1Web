@@ -6,4 +6,7 @@ import java.util.List;
 
 public interface ResultadoService {
     List<Resultado> findAllResultados();
+
+    List<Resultado> findResultadosByWord(String cadena);
+
 }

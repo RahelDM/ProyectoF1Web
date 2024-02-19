@@ -10,6 +10,7 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -84,6 +85,7 @@
 *::after {
   box-sizing: border-box;
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   :root {
