@@ -1,5 +1,6 @@
 package org.pspr.entrega_formula.serviceImpl;
 
+import org.pspr.entrega_formula.dto.PilotoDTO;
 import org.pspr.entrega_formula.model.Piloto;
 import org.pspr.entrega_formula.repository.PilotoRepository;
 import org.pspr.entrega_formula.service.PilotoService;
@@ -36,6 +37,11 @@ public class PilotoServiceImpl implements PilotoService {
             return pilotoRepository.save(piloto);
         }
         return null;
+    }
+
+    @Override
+    public PilotoDTO findPilotoMasVictorias() {
+        return this.pilotoRepository.findPilotoMasVictorias();
     }
 
 

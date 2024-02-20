@@ -21,8 +21,8 @@
 <div class="container px-4 px-lg-5">
     <!-- Content Row-->
     <div class="row gx-4 gx-lg-5">
-        <blockquote>Piloto con más victorias: <span ></span>
-            (<span ></span>) con <span ></span> victorias</blockquote>
+        <blockquote>Piloto con más victorias: <span th:text="${pilotoMasVictorias.piloto.nombre}" ></span>
+            (<span th:text="${pilotoMasVictorias.piloto.equipo}" ></span>) con <span th:text="${pilotoMasVictorias.num}" ></span> victorias</blockquote>
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
             <tr>

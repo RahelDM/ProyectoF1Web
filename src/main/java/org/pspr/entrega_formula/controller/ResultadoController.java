@@ -1,8 +1,10 @@
 package org.pspr.entrega_formula.controller;
 
+import org.pspr.entrega_formula.dto.PilotoDTO;
 import org.pspr.entrega_formula.dto.ResultadoDTO;
 import org.pspr.entrega_formula.model.Piloto;
 import org.pspr.entrega_formula.model.Resultado;
+import org.pspr.entrega_formula.service.PilotoService;
 import org.pspr.entrega_formula.service.ResultadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,10 @@ public class ResultadoController {
 
     @Autowired
     ResultadoService resultadoService;
+
+    @Autowired
+    PilotoService pilotoService;
+
     @GetMapping("")
     public String getResultados(Model model) {
         List<Resultado> resultadoList = resultadoService.findAllResultados();
@@ -40,6 +46,8 @@ public class ResultadoController {
     public String getPilotosClasificacion(Model model) {
         List<ResultadoDTO> resultados = resultadoService.findPilotosPuntos();
         model.addAttribute("resultados", resultados);
+        PilotoDTO pilotoMasVictorias = pilotoService.findPilotoMasVictorias();
+        model.addAttribute("pilotoMasVictorias", pilotoMasVictorias);
         return "resultado/clasificacionPilotos";
     }
 

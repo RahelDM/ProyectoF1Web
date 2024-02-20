@@ -1,5 +1,6 @@
 package org.pspr.entrega_formula.service;
 
+import org.pspr.entrega_formula.dto.PilotoDTO;
 import org.pspr.entrega_formula.model.Piloto;
 
 import java.util.List;
@@ -13,5 +14,7 @@ public interface PilotoService  {
     Optional<Piloto> findPilotoById(Long id);
 
     Piloto save(Piloto piloto);
+
+    PilotoDTO findPilotoMasVictorias();
 
 }

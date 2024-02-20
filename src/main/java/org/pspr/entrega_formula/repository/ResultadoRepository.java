@@ -35,7 +35,7 @@ public interface ResultadoRepository  extends JpaRepository<Resultado, Resultado
                 WHEN r.posicionLlegada = 10 THEN 1
                 ELSE 0 
             END
-        )) AS totalPuntos
+        )) 
     FROM Resultado r 
     GROUP BY r.piloto 
     ORDER BY  SUM(
@@ -55,5 +55,9 @@ public interface ResultadoRepository  extends JpaRepository<Resultado, Resultado
         ) DESC 
 """)
      List<ResultadoDTO> findPilotosPuntos();
+
+
+
+
 
 }

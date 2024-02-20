@@ -71,5 +71,4 @@ public class PilotoController {
         return "redirect:/pilotos/" + pilotoFormulario.getPilotoId(); //si se produce algún error y no se accede al formulario...
     }
 
-
 }
