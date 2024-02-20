@@ -1,5 +1,6 @@
 package org.pspr.entrega_formula.serviceImpl;
 
+import org.pspr.entrega_formula.dto.ResultadoDTO;
 import org.pspr.entrega_formula.model.Resultado;
 import org.pspr.entrega_formula.repository.ResultadoRepository;
 import org.pspr.entrega_formula.service.ResultadoService;
@@ -22,4 +23,11 @@ public class ResultadoServiceImpl implements ResultadoService {
     public List<Resultado> findResultadosByWord(String cadena) {
        return this.resultadoRepository.findResultadosByWord(cadena);
     }
+
+    @Override
+    public List<ResultadoDTO> findPilotosPuntos() {
+        return this.resultadoRepository.findPilotosPuntos();
+    }
+
+
 }

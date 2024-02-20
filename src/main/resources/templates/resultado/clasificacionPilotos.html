@@ -33,14 +33,14 @@
                 <th scope="col">Puntos</th>
             </tr>
             </thead>
-            <tbody >
+            <tbody th:each="resultado, pilotoStat :${resultados}">
             <tr>
                 <!-- pilotoStat.count es un contador para obtener la posición correlativa sobre la variable piloto-->
                 <td th:text="${pilotoStat.count}"></td>
-                <td ></td>
-                <td ></td>
-                <td ></td>
-                <td ></td>
+                <td th:text="${resultado.piloto.numero}"></td>
+                <td th:text="${resultado.piloto.nombre}"></td>
+                <td th:text="${resultado.piloto.equipo}"></td>
+                <td th:text="${resultado.puntos}"></td>
             </tr>
             </tbody>
         </table>
