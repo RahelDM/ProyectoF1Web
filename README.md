@@ -225,7 +225,7 @@ Se ha utilizado la siguiente consulta:
 
 ![image](https://github.com/RaquelSA34/ProyectoF1Web/assets/145332620/4575b08d-0301-4c04-8c98-79f022657708)
 
-## Buscar
+### Buscar
 Se ha usado la siguiente consulta:
 ```
   @Query("FROM Resultado r WHERE r.circuito.nombre LIKE %:cadena% OR r.piloto.nombre LIKE %:cadena% OR r.piloto.equipo LIKE %:cadena% ")
