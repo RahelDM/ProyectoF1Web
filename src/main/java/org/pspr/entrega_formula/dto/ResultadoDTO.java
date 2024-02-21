@@ -6,6 +6,8 @@ public class ResultadoDTO {
 
     private Piloto piloto;
 
+    private String equipo;
+
     private Long puntos;
 
     public ResultadoDTO(Piloto piloto, Long puntos) {
@@ -13,6 +15,10 @@ public class ResultadoDTO {
         this.puntos = puntos;
     }
 
+    public ResultadoDTO(String equipo, Long puntos) {
+        this.equipo = equipo;
+        this.puntos = puntos;
+    }
 
     public Piloto getPiloto() {
         return piloto;
@@ -28,5 +34,13 @@ public class ResultadoDTO {
 
     public void setPuntos(Long puntos) {
         this.puntos = puntos;
+    }
+
+    public String getEquipo() {
+        return equipo;
+    }
+
+    public void setEquipo(String equipo) {
+        this.equipo = equipo;
     }
 }

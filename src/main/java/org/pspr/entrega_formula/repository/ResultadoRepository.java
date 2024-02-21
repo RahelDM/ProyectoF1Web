@@ -58,6 +58,44 @@ public interface ResultadoRepository  extends JpaRepository<Resultado, Resultado
 
 
 
+     @Query("""
+    SELECT new org.pspr.entrega_formula.dto.ResultadoDTO(r.piloto.equipo, 
+        SUM(
+            CASE 
+                WHEN r.posicionLlegada = 1 THEN 25
+                WHEN r.posicionLlegada = 2 THEN 18
+                WHEN r.posicionLlegada = 3 THEN 15
+                WHEN r.posicionLlegada = 4 THEN 12
+                WHEN r.posicionLlegada = 5 THEN 10
+                WHEN r.posicionLlegada = 6 THEN 8
+                WHEN r.posicionLlegada = 7 THEN 6
+                WHEN r.posicionLlegada = 8 THEN 4
+                WHEN r.posicionLlegada = 9 THEN 2
+                WHEN r.posicionLlegada = 10 THEN 1
+                ELSE 0 
+            END
+        )) 
+    FROM Resultado r 
+    GROUP BY r.piloto.equipo
+    ORDER BY  SUM(
+            CASE 
+                WHEN r.posicionLlegada = 1 THEN 25
+                WHEN r.posicionLlegada = 2 THEN 18
+                WHEN r.posicionLlegada = 3 THEN 15
+                WHEN r.posicionLlegada = 4 THEN 12
+                WHEN r.posicionLlegada = 5 THEN 10
+                WHEN r.posicionLlegada = 6 THEN 8
+                WHEN r.posicionLlegada = 7 THEN 6
+                WHEN r.posicionLlegada = 8 THEN 4
+                WHEN r.posicionLlegada = 9 THEN 2
+                WHEN r.posicionLlegada = 10 THEN 1
+                ELSE 0 
+            END
+        ) DESC 
+""")
+     List<ResultadoDTO> findEquiposPuntos();
+
+
 
 
 }

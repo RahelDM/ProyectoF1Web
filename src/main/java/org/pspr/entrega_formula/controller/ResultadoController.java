@@ -51,5 +51,11 @@ public class ResultadoController {
         return "resultado/clasificacionPilotos";
     }
 
+    @GetMapping("/equipos")
+    public String getEquiposClasificacion(Model model) {
+        List<ResultadoDTO> resultados = resultadoService.findEquiposPuntos();
+        model.addAttribute("resultados", resultados);
+        return "resultado/clasificacionEquipos";
+    }
 
 }

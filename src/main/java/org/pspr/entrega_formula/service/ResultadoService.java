@@ -14,4 +14,5 @@ public interface ResultadoService {
     List<ResultadoDTO> findPilotosPuntos();
 
 
+    List<ResultadoDTO> findEquiposPuntos();
 }

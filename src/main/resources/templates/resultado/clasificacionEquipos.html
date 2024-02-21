@@ -29,11 +29,11 @@
                 <th scope="col">Puntos</th>
             </tr>
             </thead>
-            <tbody >
+            <tbody th:each="resultado, equipoStat : ${resultados}">
             <tr>
                 <td th:text="${equipoStat.count}"></td>
-                <td ></td>
-                <td ></td>
+                <td th:text="${resultado.equipo}"></td>
+                <td th:text="${resultado.puntos}"></td>
             </tr>
             </tbody>
         </table>

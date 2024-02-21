@@ -29,5 +29,10 @@ public class ResultadoServiceImpl implements ResultadoService {
         return this.resultadoRepository.findPilotosPuntos();
     }
 
+    @Override
+    public List<ResultadoDTO> findEquiposPuntos() {
+        return this.resultadoRepository.findEquiposPuntos();
+    }
+
 
 }
