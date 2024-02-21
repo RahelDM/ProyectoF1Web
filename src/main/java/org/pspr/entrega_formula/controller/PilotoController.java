@@ -62,13 +62,13 @@ public class PilotoController {
     @PostMapping("/piloto/save")
     public String savePiloto(@ModelAttribute(value = "pilotoFormulario") Piloto pilotoFormulario) {
         pilotoService.save(pilotoFormulario);
-        return "redirect:/pilotos/" + pilotoFormulario.getPilotoId(); //si se produce algún error y no se accede al formulario...
+        return "redirect:/pilotos/" + pilotoFormulario.getPilotoId();
     }
 
     @PutMapping("/piloto/save")
     public String updatePiloto(@ModelAttribute(value = "pilotoFormulario") Piloto pilotoFormulario) {
         pilotoService.save(pilotoFormulario);
-        return "redirect:/pilotos/" + pilotoFormulario.getPilotoId(); //si se produce algún error y no se accede al formulario...
+        return "redirect:/pilotos/" + pilotoFormulario.getPilotoId();
     }
 
 }

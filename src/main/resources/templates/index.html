@@ -78,10 +78,12 @@
                         th:text="${piloto.equipo}">
                     </h6>
                     <div class="text-center">
-                        <img th:class="piloto-portada" th:src="${piloto.foto}" th:alt="${piloto.nombre}" class="rounded">
+                        <img th:class="piloto-portada" th:src="${piloto.foto}" th:alt="${piloto.nombre}"
+                             class="rounded">
                     </div>
                 </div>
-                <div class="card-footer"><a class="btn btn-primary btn-sm" th:href="@{/pilotos/{id} (id=${piloto.pilotoId}) }">Más info</a></div>
+                <div class="card-footer"><a class="btn btn-primary btn-sm"
+                                            th:href="@{/pilotos/{id} (id=${piloto.pilotoId}) }">Más info</a></div>
             </div>
         </div>
     </div>

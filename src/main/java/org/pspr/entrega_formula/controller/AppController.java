@@ -31,7 +31,6 @@ public class AppController {
         List<Piloto> pilotoList = pilotoService.findPilotosAlAzar(desde, desde+ NEXT);
         model.addAttribute("pilotosAzar",pilotoList); //cargamos la lista de pilotos al azar
     }
-
     private int generarNumAleatorio(int max, int min){
         Random rand = new Random();
         return rand.nextInt((max - min) + 1) + min;
